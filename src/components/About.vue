@@ -1,5 +1,22 @@
 <script setup lang="ts">
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import gsap from "gsap";
+import { onMounted } from "vue";
+
+function floatingElement() {
+  gsap.to(".doge", {
+    y: 100,
+    scale: 1,
+    repeat: -1,
+    yoyo: true,
+    duration: 2,
+    ease: "power1.inOut",
+  });
+}
+
+onMounted(() => {
+  floatingElement();
+});
 </script>
 
 <template>
@@ -21,4 +38,5 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
       </form>
     </CardContent>
   </Card>
+  <img src="/assets/images/doge.png" class="doge max-w-xs max-h-48" />
 </template>

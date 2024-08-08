@@ -2,23 +2,6 @@
 import Navbar from "./components/Navbar.vue";
 import About from "./components/About.vue";
 import Carousel from "./components/Skills.vue";
-import gsap from "gsap";
-import { onMounted } from "vue";
-
-function floatingElement() {
-  gsap.to(".doge", {
-    y: 100,
-    scale: 1,
-    repeat: -1,
-    yoyo: true,
-    duration: 2,
-    ease: "power1.inOut",
-  });
-}
-
-onMounted(() => {
-  floatingElement();
-});
 </script>
 
 <template>
@@ -26,7 +9,6 @@ onMounted(() => {
     <Navbar />
     <div class="slides slide1 flex flex-row gap-0 justify-center">
       <About />
-      <img src="/assets/images/doge.png" class="doge max-w-xs max-h-48" />
     </div>
     <div class="slides slide2">
       <Carousel />
